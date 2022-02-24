@@ -1,9 +1,11 @@
+import React from "react";
+import SearchBar from "./Components/SearchBar";
 
 
 function App() {
   return (
     <div className="App">
-     <div className="text-3xl font-bold underline">Tailwind</div>
+     <SearchBar/>
     </div>
   );
 }
