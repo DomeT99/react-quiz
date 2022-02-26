@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 
 class ButtonStart extends Component {
-  render(props) {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return (
       <div className="flex justify-center py-5">
         <button

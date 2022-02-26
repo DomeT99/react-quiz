@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 
 class ReactLogo extends Component {
-  state = {
-    logoPath:
-      "https://www.shareicon.net/data/256x256/2016/07/08/117367_logo_512x512.png",
-    logoDim: 180,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      logoPath:
+        "https://www.shareicon.net/data/256x256/2016/07/08/117367_logo_512x512.png",
+      logoDim: 180,
+    };
+  }
   render() {
     return (
       <>
