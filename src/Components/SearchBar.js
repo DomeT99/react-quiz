@@ -14,11 +14,7 @@ class SearchBar extends Component {
             </span>
           </div>
         </div>
-        <div className="text-center mx-auto">
-          <p className="font-mono font-semibold text-sm tracking-tight">
-            Are you ready?
-          </p>
-        </div>
+
       </nav>
     );
   }
