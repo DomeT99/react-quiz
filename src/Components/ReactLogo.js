@@ -14,6 +14,7 @@ class ReactLogo extends Component {
           width={this.state.logoDim}
           src={this.state.logoPath}
           loading="lazy"
+          className="animate-bounce"
         />
         <div className="text-center mx-auto py-10">
           <p className="font-mono font-semibold text-sm tracking-tight">
