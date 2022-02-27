@@ -16,9 +16,6 @@ class App extends Component {
         trueAnswer: "True",
         wrongAnswer: "False",
       },
-      colorBtn: {
-        start: "#61DBFB",
-      },
     };
     /*--------------- */
     //Condition
@@ -76,10 +73,7 @@ class App extends Component {
         <>
           <ReactLogo />
           <div className="flex justify-center py-5">
-            <ButtonStart
-              colorBtn={this.state.colorBtn.start}
-              nameBtn={this.state.nameBtn.start}
-            />
+            <ButtonStart nameBtn={this.state.nameBtn.start} />
           </div>
         </>
       );

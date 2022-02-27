@@ -1,9 +1,14 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    colors: {
+      blueReact: "#61DBFB",
+    },
+    extend: {
+      animation: {
+        "spin-slow": "spin 5s linear infinite",
+      },
+    },
   },
   plugins: [],
-}
+};

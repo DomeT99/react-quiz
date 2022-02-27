@@ -19,7 +19,7 @@ class CardQuestion extends Component {
   render() {
     return (
       <>
-        <div className="w-96 h-80 rounded-lg border-2 border-[#61DBFB] shadow-md shadow-[#61DBFB]">
+        <div className="w-96 h-80 rounded-lg border-2 border-blueReact shadow-md shadow-blueReact scale-animation">
           <h1 className="text-center mt-24 text-lg font-mono font-semibold text-md tracking-tight">
             {this.props.questionCard}
           </h1>

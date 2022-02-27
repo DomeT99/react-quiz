@@ -1,5 +1,6 @@
 import React from "react";
 import "../src/Assets/global.css"
+import "../src/Assets/keyframes.css"
 import ReactDOM from "react-dom";
 
 import App from "./App";
