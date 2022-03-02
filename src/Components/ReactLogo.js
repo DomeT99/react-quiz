@@ -12,16 +12,20 @@ class ReactLogo extends Component {
   render() {
     return (
       <>
-        <img
-          height={this.state.logoDim}
-          width={this.state.logoDim}
-          src={this.state.logoPath}
-          loading="lazy"
-          className="animate-spin-slow"
-        />
+        <div className="flex justify-center">
+          <img
+            height={this.state.logoDim}
+            width={this.state.logoDim}
+            src={this.state.logoPath}
+            loading="lazy"
+            className="animate-spin-slow"
+          />
+        </div>
         <div className="text-center mx-auto py-10">
-          <p className="font-mono font-semibold text-sm tracking-tight">
-            Are you ready?
+          <p className="font-mono font-semibold text-md tracking-tight">
+            How well do you know React?
+            <br />
+            Let's find out!
           </p>
         </div>
       </>

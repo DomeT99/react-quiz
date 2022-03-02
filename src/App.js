@@ -9,6 +9,7 @@ import _ from "lodash";
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       //Button props
       nameBtn: {
@@ -16,13 +17,10 @@ class App extends Component {
         trueAnswer: "True",
         wrongAnswer: "False",
       },
+      startPress: false,
     };
     /*--------------- */
-    //Condition
-    this.condition = {
-      startPress: true,
-    };
-    /*--------------- */
+
     //Card
     this.cardProp = {
       questions: [
@@ -55,10 +53,28 @@ class App extends Component {
       ],
     };
   }
+  startQuiz = () => {
+    this.setState((prevState) => ({
+      startPress: (prevState.startPress = true),
+    }));
+  };
 
   render() {
     let section;
-    if (this.condition.startPress) {
+
+    if (this.state.startPress == false) {
+      section = (
+        <>
+          <ReactLogo />
+          <div className="flex justify-center py-5">
+            <ButtonStart
+              onStart={this.startQuiz}
+              nameBtn={this.state.nameBtn.start}
+            />
+          </div>
+        </>
+      );
+    } else {
       _.filter(this.cardProp.questions, (filter) => {
         if (filter.active) {
           section = (
@@ -68,15 +84,6 @@ class App extends Component {
           );
         }
       });
-    } else {
-      section = (
-        <>
-          <ReactLogo />
-          <div className="flex justify-center py-5">
-            <ButtonStart nameBtn={this.state.nameBtn.start} />
-          </div>
-        </>
-      );
     }
 
     return (

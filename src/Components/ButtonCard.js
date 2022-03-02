@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ButtonStart extends Component {
+class ButtonCard extends Component {
   constructor(props) {
     super(props);
   }
@@ -10,7 +10,6 @@ class ButtonStart extends Component {
         <button
           type="button"
           className={`px-4 h-14 py-3 bg-blueReact rounded-md outline-none shadow-lg transform active:scale-75 transition-transform`}
-          onClick={this.props.onStart}
         >
           {this.props.nameBtn}
         </button>
@@ -19,4 +18,4 @@ class ButtonStart extends Component {
   }
 }
 
-export default ButtonStart;
+export default ButtonCard;
