@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ButtonStart from "./ButtonStart";
 import ButtonCard from "./ButtonCard";
 import _ from "lodash";
 
@@ -28,10 +27,12 @@ class CardQuestion extends Component {
             <ButtonCard
               colorBtn={this.buttonProp.colorBtn.start}
               nameBtn={this.buttonProp.nameBtn.trueAnswer}
+              onChooseAnswer={this.props.trueAnswer}
             />
             <ButtonCard
               colorBtn={this.buttonProp.colorBtn.start}
               nameBtn={this.buttonProp.nameBtn.wrongAnswer}
+              onChooseAnswer={this.props.wrongAnswer}
             />
           </div>
         </div>
