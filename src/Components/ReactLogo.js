@@ -23,9 +23,8 @@ class ReactLogo extends Component {
         </div>
         <div className="text-center mx-auto py-10">
           <p className="font-mono font-semibold text-md tracking-tight">
-            How well do you know React?
-            <br />
-            Let's find out!
+            Hey you!
+            <br />I have a question for you
           </p>
         </div>
       </>

@@ -4,6 +4,7 @@ import ReactLogo from "./Components/ReactLogo";
 import ButtonStart from "./Components/ButtonStart";
 import CheckSvg from "./Components/CheckSvg";
 import WrongSvg from "./Components/WrongSvg";
+import ButtonNext from "./Components/ButtonNext";
 import { render } from "@testing-library/react";
 import CardQuestion from "./Components/CardQuestion";
 import _ from "lodash";
@@ -22,42 +23,18 @@ class App extends Component {
       startPress: false,
       svgCheck: null,
       hiddenClass: "hidden",
+      hiddenCard: "block",
+      disabled: "opacity: .4",
     };
     /*--------------- */
-
     //Card
     this.cardProp = {
       questions: [
         {
-          id: _.uniqueId("id_"),
+          id: 0,
           question: "React is considered a framework",
           active: true,
           answer: false,
-        },
-        {
-          id: _.uniqueId("id_"),
-          question: "React was developed by Facebook",
-          active: false,
-          answer: true,
-        },
-        {
-          id: _.uniqueId("id_"),
-          question: "React uses the Virtual DOM",
-          active: false,
-          answer: true,
-        },
-        {
-          id: _.uniqueId("id_"),
-          question: "React was born in 2016",
-          active: false,
-          answer: false,
-        },
-
-        {
-          id: _.uniqueId("id_"),
-          question: "React is currently the most popular framework",
-          active: false,
-          answer: true,
         },
       ],
     };
@@ -75,11 +52,13 @@ class App extends Component {
       this.setState({
         svgCheck: (this.state.svgCheck = true),
         hiddenClass: (this.state.hiddenClass = "block"),
+        hiddenCard: (this.state.hiddenCard = "hidden"),
       });
     } else {
       this.setState({
         svgCheck: (this.state.svgCheck = false),
         hiddenClass: (this.state.hiddenClass = "block"),
+        hiddenCard: (this.state.hiddenCard = "hidden"),
       });
     }
   };
@@ -90,15 +69,20 @@ class App extends Component {
       this.setState({
         svgCheck: (this.state.svgCheck = false),
         hiddenClass: (this.state.hiddenClass = "block"),
+        hiddenCard: (this.state.hiddenCard = "hidden"),
       });
     } else {
       this.setState({
         svgCheck: (this.state.svgCheck = true),
         hiddenClass: (this.state.hiddenClass = "block"),
+        hiddenCard: (this.state.hiddenCard = "hidden"),
       });
     }
   };
-  /*-------------------------------------- */
+  /*-------------------------*/
+  nextQuestion = () => {
+   
+  };
   render() {
     let section;
 
@@ -124,10 +108,12 @@ class App extends Component {
                   wrongAnswer={this.wrongChoose}
                   trueAnswer={this.trueChoose}
                   questionCard={filter.question}
+                  hiddenCard={this.state.hiddenCard}
                 />
                 <br />
                 <div id="container-check" className={this.state.hiddenClass}>
                   <CheckSvg />
+                  <ButtonNext nextQuestion={this.nextQuestion} />
                 </div>
               </>
             );
@@ -138,10 +124,12 @@ class App extends Component {
                   wrongAnswer={this.wrongChoose}
                   trueAnswer={this.trueChoose}
                   questionCard={filter.question}
+                  hiddenCard={this.state.hiddenCard}
                 />
                 <br />
                 <div id="container-wrong" className={this.state.hiddenClass}>
                   <WrongSvg />
+                  <ButtonNext nextQuestion={this.nextQuestion} />
                 </div>
               </>
             );

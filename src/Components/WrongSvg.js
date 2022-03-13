@@ -7,7 +7,7 @@ class WrongSvg extends Component {
         <div className="flex justify-center scale-animation">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10"
+            className="h-20 w-20"
             fill="#ef4444"
             viewBox="0 0 24 24"
             stroke="currentColor"
