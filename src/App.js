@@ -5,6 +5,7 @@ import ButtonStart from "./Components/ButtonStart";
 import CheckSvg from "./Components/CheckSvg";
 import WrongSvg from "./Components/WrongSvg";
 import ButtonNext from "./Components/ButtonNext";
+import SocialMediaBar from "./Components/SocialMediaBar";
 import { render } from "@testing-library/react";
 import CardQuestion from "./Components/CardQuestion";
 import _ from "lodash";
@@ -23,6 +24,7 @@ class App extends Component {
       startPress: false,
       svgCheck: null,
       hiddenClass: "hidden",
+      hiddenBar: "hidden",
       hiddenCard: "block",
       disabled: "opacity: .4",
     };
@@ -81,7 +83,10 @@ class App extends Component {
   };
   /*-------------------------*/
   nextQuestion = () => {
-   
+    this.setState({
+      hiddenClass: (this.state.hiddenClass = "hidden"),
+      hiddenBar: (this.state.hiddenBar = "block"),
+    });
   };
   render() {
     let section;
@@ -115,6 +120,7 @@ class App extends Component {
                   <CheckSvg />
                   <ButtonNext nextQuestion={this.nextQuestion} />
                 </div>
+                <SocialMediaBar hiddenBar={this.state.hiddenBar} />
               </>
             );
           } else {
@@ -131,6 +137,7 @@ class App extends Component {
                   <WrongSvg />
                   <ButtonNext nextQuestion={this.nextQuestion} />
                 </div>
+                <SocialMediaBar hiddenBar={this.state.hiddenBar} />
               </>
             );
           }
